@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        
+        stage('Build') {
+            steps {
+                script {
+                    def compiler = 'g++'
+                    sh "${compiler} main.cpp -o main"
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            archiveArtifacts artifacts:'main'
+        }
+
+    }
+}
