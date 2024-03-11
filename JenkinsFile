@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     def compiler = 'g++'
-                    sh "${compiler} main.cpp -o main"
+                    sh "${compiler} hi.cpp -o main"
                 }
             }
         }
